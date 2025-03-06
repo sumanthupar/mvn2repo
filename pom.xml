@@ -41,27 +41,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.9.0</version> <!-- Older version with vulnerabilities -->
         </dependency>
-
-        <!-- 5. Deprecated Dependency -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.0.0.Final</version> <!-- Deprecated version, vulnerable to exploits -->
-        </dependency>
-
-        <!-- 7. Outdated Cryptographic Library -->
-        <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
-            <version>1.46</version> <!-- Older version with known cryptographic vulnerabilities -->
-        </dependency>
-
-        <!-- 8. Unused Dependency (Increases attack surface unnecessarily) -->
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
-            <version>0.10.1.0</version> <!-- Unused in the project but still included -->
-        </dependency>
     </dependencies>
 
 </project>
