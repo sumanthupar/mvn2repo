@@ -40,11 +40,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.9.0</version> <!-- Older version with vulnerabilities -->
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.10.0</version> <!-- Conflicting version, can cause issues -->
-        </dependency>
 
         <!-- 5. Deprecated Dependency -->
         <dependency>
