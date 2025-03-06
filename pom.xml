@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>maven-hello-world</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>maven-hello-world</name>
+    <description>A simple Hello World Maven project with vulnerabilities</description>
+
+    <dependencies>
+        <!-- 1. Outdated Dependency (Vulnerable version) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>4.0.0.RELEASE</version> <!-- Old version with known vulnerabilities -->
+        </dependency>
+
+        <!-- 2. No Scopes Defined for Dependencies (Could expose testing libraries in production) -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version> <!-- Unnecessary in production -->
+        </dependency>
+
+        <!-- 3. Untrusted Repository (Could pull in unsafe dependencies) -->
+        <repositories>
+            <repository>
+                <id>unsafe-repo</id>
+                <url>https://example.com/maven</url> <!-- Untrusted repository -->
+            </repository>
+        </repositories>
+
+        <!-- 4. Unspecified Dependency Version (Auto-resolve to potentially insecure versions) -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <!-- Missing version, could auto-fetch a vulnerable version -->
+        </dependency>
+
+        <!-- 5. Unused Dependency (Increases the attack surface) -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.3</version> <!-- Unused in the project, but still included -->
+        </dependency>
+
+        <!-- 6. Insecure Plugin (Outdated and vulnerable plugin) -->
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.10</version> <!-- Vulnerable plugin version -->
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>tree</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+
+        <!-- 7. Missing Dependency Version (Could result in unintended dependency version use) -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <!-- No version specified, vulnerable to auto-resolution -->
+        </dependency>
+        
+        <!-- 8. Duplicate Dependencies (Increases the attack surface) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.0.0.RELEASE</version> <!-- Duplicate dependency, increases size unnecessarily -->
+        </dependency>
+
+        <!-- 9. Dependency Conflicts (Different versions of the same dependency) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.6.7.3</version> <!-- Older version with known vulnerabilities -->
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.0</version> <!-- Newer version conflicting with the previous one -->
+        </dependency>
+
+        <!-- 10. Dependency with Unnecessary Transitive Dependencies -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.10.1.0</version> <!-- Large number of transitive dependencies included, some might be unnecessary -->
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Insecure Plugin: Example of an outdated plugin with known vulnerabilities -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18</version> <!-- Outdated version -->
+            </plugin>
+        </plugins>
+    </build>
+</project>
