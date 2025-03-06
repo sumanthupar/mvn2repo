@@ -53,14 +53,6 @@
             <version>5.0.0.Final</version> <!-- Deprecated version, vulnerable to exploits -->
         </dependency>
 
-        <!-- 6. Untrusted Repository (Could pull in insecure dependencies) -->
-        <repositories>
-            <repository>
-                <id>untrusted-repo</id>
-                <url>https://example.com/maven</url> <!-- Using an untrusted repository -->
-            </repository>
-        </repositories>
-
         <!-- 7. Outdated Cryptographic Library -->
         <dependency>
             <groupId>org.bouncycastle</groupId>
