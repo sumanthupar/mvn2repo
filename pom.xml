@@ -19,14 +19,6 @@
             <artifactId>spring-core</artifactId>
             <version>4.0.0.RELEASE</version> <!-- Outdated version with known vulnerabilities -->
         </dependency>
-
-        <!-- 2. Missing Dependency Version (Could pull in an insecure version) -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>4.0</version>
-            <!-- Missing version could pull in a vulnerable version automatically -->
-        </dependency>
     </dependencies>
 
 </project>
