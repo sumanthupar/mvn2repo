@@ -61,27 +61,6 @@
             <artifactId>commons-io</artifactId>
             <version>2.4</version> <!-- Vulnerable version with CVE-2014-2051 -->
         </dependency>
-
-        <!-- 8. JAX-RS vulnerable version -->
-        <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-server</artifactId>
-            <version>2.24.1</version> <!-- Vulnerable version with CVE-2017-3236 -->
-        </dependency>
-
-        <!-- 9. Vulnerable version of Spring Web -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>3.0.0.RELEASE</version> <!-- Vulnerable version with CVE-2017-4973 -->
-        </dependency>
-
-        <!-- 10. Old version of Hibernate -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>4.2.0.Final</version> <!-- Vulnerable version with CVE-2015-3253 -->
-        </dependency>
     </dependencies>
 
 </project>
