@@ -19,5 +19,5 @@
             <artifactId>spring-core</artifactId>
             <version>4.0.0.RELEASE</version> <!-- Outdated version with known vulnerabilities -->
         </dependency>
-    <dependencies>
+    </dependencies>
 </project>
