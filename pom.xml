@@ -40,27 +40,6 @@
             <artifactId>struts2-core</artifactId>
             <version>2.3.34</version> <!-- Vulnerable version with CVE-2017-5638 -->
         </dependency>
-
-        <!-- 5. Apache Commons Collections -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>4.0</version> <!-- Vulnerable version with CVE-2015-4852 -->
-        </dependency>
-
-        <!-- 6. Spring Security vulnerability -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-            <version>3.2.5.RELEASE</version> <!-- Vulnerable version with CVE-2016-9878 -->
-        </dependency>
-
-        <!-- 7. Apache Commons IO -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.4</version> <!-- Vulnerable version with CVE-2014-2051 -->
-        </dependency>
     </dependencies>
 
 </project>
